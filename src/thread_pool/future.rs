@@ -204,8 +204,8 @@ mod task {
             // Abort to simplify panic handling.
             let abort = AbortOnDrop;
 
-            loop {
-                if poll {
+            if poll {
+                loop {
                     // We create a waker below which owns one reference.
                     self.inc_ref_count();
 
